@@ -27,4 +27,3 @@ crash.log
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
-03-TerCommBas/terraform-manifests/.terraform.lock.hcl
