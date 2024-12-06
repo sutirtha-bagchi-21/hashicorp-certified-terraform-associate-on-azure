@@ -1,4 +1,4 @@
-business_unit = "it"
-environment = "dev"
-resoure_group_name = "rg"
-virtual_network_name = "vnet"
+business_unit        = "RG"
+environment          = "terraform"
+resoure_group_name   = "myrg"
+virtual_network_name = "myvnet"

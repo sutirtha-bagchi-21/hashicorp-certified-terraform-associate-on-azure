@@ -1,20 +1,26 @@
 # 1. Output Values for Resource Group Resource
 output "resource_group_id" {
   description = "Resource Group ID"
-  # Attribute Reference
-  value = azurerm_resource_group.myrg.id 
+  value       = azurerm_resource_group.RG-terraform-myrg.id
 }
+
 output "resource_group_name" {
   description = "Resource Group Name"
-  # Argument Reference
-  value = azurerm_resource_group.myrg.name
+  value       = azurerm_resource_group.RG-terraform-myrg.name
+}
+
+output "resource_group_location" {
+  description = "Resource Group Location"
+  value       = azurerm_resource_group.RG-terraform-myrg.location
 }
 
 # 2. Output Values for Virtual Network Resource
-output "virtual_network_name" {
-  description = "Virtal Network Name"
-  value = azurerm_virtual_network.myvnet.name  
-  #sensitive = true  # Enable during Step-08
+
+output "vnet_name" {
+  description = "Virtual Network Name"
+  value       = azurerm_virtual_network.myvnet.name
 }
-
-
+output "vnet_location" {
+  description = "Virtual Network Location"
+  value       = azurerm_virtual_network.myvnet.location
+}
