@@ -23,4 +23,5 @@ output "vnet_name" {
 output "vnet_location" {
   description = "Virtual Network Location"
   value       = azurerm_virtual_network.myvnet.location
+  sensitive = true
 }
