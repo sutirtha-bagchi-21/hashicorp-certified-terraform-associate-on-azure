@@ -1,7 +1,7 @@
 # Datasources
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription
 data "azurerm_subscription" "current" {
- 
+
 }
 
 ## TEST DATASOURCES using OUTPUTS
