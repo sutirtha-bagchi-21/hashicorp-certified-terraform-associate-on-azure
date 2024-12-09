@@ -2,10 +2,10 @@
 data "terraform_remote_state" "project1" {
   backend = "azurerm"
   config = {
-    resource_group_name   = "terraform-storage-rg"
-    storage_account_name  = "terraformstate201"
-    container_name        = "tfstatefiles"
-    key                   = "network-terraform.tfstate"
+    resource_group_name  = "RG-terraform-state"
+    storage_account_name = "satfstatelocal"
+    container_name       = "tfstatefile"
+    key                  = "network-terraform.tfstate"
   }
 }
 
