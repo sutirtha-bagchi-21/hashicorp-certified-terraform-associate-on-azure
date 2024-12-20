@@ -133,7 +133,7 @@ terraform plan
 terraform apply -auto-approve
 
 # Verify - Login to Azure Virtual Machine Instance
-ssh -i ssh-keys/terraform-azure.pem azureuser@IP_ADDRESSS_OF_YOUR_VM
+ssh -i ssh-keys/terraform-azure.pem azureuser@172.172.148.77
 ssh -i ssh-keys/terraform-azure.pem azureuser@20.185.30.127
 Verify /tmp for all files copied
 cd /tmp
