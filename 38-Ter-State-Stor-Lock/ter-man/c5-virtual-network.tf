@@ -39,3 +39,4 @@ resource "azurerm_network_interface" "myvmnic" {
   }
   tags = local.common_tags
 }
+

@@ -1,5 +1,6 @@
 # Resource: Azure Linux Virtual Machine
 resource "azurerm_linux_virtual_machine" "mylinuxvm" {
+  depends_on = [ azurerm_subnet_network_security_group_association.subnet-nsg ]
   name                  = local.vm_name
   computer_name         = local.vm_name # Hostname of the VM
   resource_group_name   = azurerm_resource_group.myrg.name
