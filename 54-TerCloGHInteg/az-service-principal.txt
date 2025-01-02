@@ -1,0 +1,36 @@
+
+{
+  "appId": "168506b2-9405-40f0-bd26-f22d5b7ab303",
+  "displayName": "azure-cli-2024-12-30-18-04-30",
+  "password": "5l18Q~aQuH6AM5uoS27xEznJiI4rT2ULikuJkb-4",
+  "tenant": "16b3c013-d300-468d-ac64-7eda0820b6d3"
+}
+ visual studio
+ {
+  "appId": "e6616a03-482a-4dc1-8a73-808415a39e8d",
+  "displayName": "azure-cli-2024-12-30-18-37-52",
+  "password": "Vpa8Q~pfBnKiRcTfwatpYzzYMqir1PoycPkxZdjT",
+  "tenant": "de9cc7b0-b22a-4826-8172-dc5fea749aa8"
+}
+
+appId = ARM_CLIENT_ID
+password = ARM_CLIENT_SECRET
+tenant = ARM_TENANT_ID
+
+az account list -o table
+SubscriptionId = ARM_SUBSCRIPTION_ID
+
+# Environment Variables for Terraform Cloud - Visual studio subscription
+ARM_CLIENT_ID=e6616a03-482a-4dc1-8a73-808415a39e8d
+ARM_CLIENT_SECRET=Vpa8Q~pfBnKiRcTfwatpYzzYMqir1PoycPkxZdjT
+ARM_TENANT_ID=de9cc7b0-b22a-4826-8172-dc5fea749aa8
+ARM_SUBSCRIPTION_ID=ec761fc4-0fc7-4244-90d8-67043d2b51ed
+
+
+
+# Verify
+az logout
+az account list-locations -o table
+az login --service-principal -u e6616a03-482a-4dc1-8a73-808415a39e8d -p Vpa8Q~pfBnKiRcTfwatpYzzYMqir1PoycPkxZdjT --tenant de9cc7b0-b22a-4826-8172-dc5fea749aa8
+az account list-locations -o table
+az logout
