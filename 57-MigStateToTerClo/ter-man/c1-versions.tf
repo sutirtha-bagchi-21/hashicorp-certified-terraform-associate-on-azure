@@ -4,7 +4,7 @@ terraform {
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
-      version = ">= 2.0" 
+       version = ">= 3.116, < 5"
     }  
     random = {
       source = "hashicorp/random"
@@ -12,10 +12,10 @@ terraform {
     }           
   }
 # Enable the below Backend block during Step-05
- /*
+ 
   backend "remote" {
     hostname      = "app.terraform.io"
-    organization  = "hcta-azure-demo1"  # Organization should already exists in Terraform Cloud
+    organization  = "sutirtha-azure-demo1"  # Organization should already exists in Terraform Cloud
     workspaces {
       name = "state-migration-demo1" 
       # Two cases: 
@@ -23,5 +23,4 @@ terraform {
       # Case-2: If workspace not exists, during migration it will get created
     }
   }  
-*/
 }
