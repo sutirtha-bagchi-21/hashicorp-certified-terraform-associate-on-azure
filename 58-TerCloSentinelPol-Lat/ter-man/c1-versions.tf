@@ -4,7 +4,7 @@ terraform {
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
-      version = ">= 2.0" 
+      version = ">= 3.116, < 5"
     }
     random = {
       source = "hashicorp/random"
@@ -13,7 +13,7 @@ terraform {
   }
   # Terraform Backend pointed to TF Cloud
   backend "remote" {
-    organization = "hcta-azure-demo1"
+    organization = "sutirtha-azure-demo1"
     workspaces {
       name = "sentinel-azure-demo1"
     }
@@ -22,7 +22,8 @@ terraform {
 
 # Provider Block
 provider "azurerm" {
- features {}          
+ features {}      
+ subscription_id = "ec761fc4-0fc7-4244-90d8-67043d2b51ed"    
 }
 
 # Random String Resource
@@ -30,7 +31,7 @@ resource "random_string" "myrandom" {
   length = 6
   upper = false 
   special = false
-  number = false   
+  numeric = false   
 }
 
 

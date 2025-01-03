@@ -15,7 +15,7 @@ import "tfconfig-functions" as config
 import "strings"
 
 # List of allowed providers
-allowed_list = ["azurerm", "aws", "local", "null", "random", "terraform", "tfe", "time"]
+allowed_list = ["aws", "local", "null", "random", "terraform", "tfe", "time"]
 
 # Get all providers
 allProviders = config.find_all_providers()

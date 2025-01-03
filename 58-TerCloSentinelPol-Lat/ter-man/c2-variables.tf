@@ -3,7 +3,7 @@
 variable "business_unit" {
   description = "Business Unit Name"
   type = string
-  default = "hr"
+  default = "RG-Terraform"
 }
 # 2. Environment Name
 variable "environment" {

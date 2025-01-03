@@ -1,5 +1,5 @@
 # Generic Variables
-business_unit = "it"
+business_unit = "RG-terraform"
 environment = "dev"
 
 # Resource Variables
