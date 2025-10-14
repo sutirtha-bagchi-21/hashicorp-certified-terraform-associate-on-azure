@@ -79,6 +79,13 @@ variable "app_computer_name" {
 }
 
 
+variable "instance_count" {
+  description = "Number of VM instances in the scale set"
+  type        = number
+  default     = 2
+}
+
+
 # YOU CAN ADD LIKE THIS MANY MORE argument values from each resource
 # 6. Subnet Name
 # 7. Public IP Name
