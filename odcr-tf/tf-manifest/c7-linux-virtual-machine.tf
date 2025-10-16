@@ -6,7 +6,7 @@ resource "azurerm_linux_virtual_machine" "weblinuxvm" {
   location              = azurerm_resource_group.myrg.location
   size                  = "Standard_D2as_v4"
   admin_username        = "azureuser"
-  admin_password        = "AhtritusMS11@"
+  admin_password        = "azureuser@123"
   network_interface_ids = [azurerm_network_interface.webvmnic.id]
   os_disk {
     name                 = "osdisk"
@@ -20,20 +20,21 @@ resource "azurerm_linux_virtual_machine" "weblinuxvm" {
     version   = "latest"
   }
   disable_password_authentication = false
-  capacity_reservation_group_id   = local.selected_crg_id
+  capacity_reservation_group_id   = local.map_crg_ids_by_name.crg-web
   zone                            = "1"
 }
 
 # Resource: Azure Linux Virtual Machine
 resource "azurerm_linux_virtual_machine" "applinuxvm" {
-  name                  = var.vm_name_appservers
-  computer_name         = var.app_computer_name
-  resource_group_name   = azurerm_resource_group.myrg.name
-  location              = azurerm_resource_group.myrg.location
-  size                  = "Standard_D4as_v4"
-  admin_username        = "azureuser"
-  admin_password        = "AhtritusMS11@"
-  network_interface_ids = [azurerm_network_interface.appvmnic.id]
+  name                          = var.vm_name_appservers
+  computer_name                 = var.app_computer_name
+  resource_group_name           = azurerm_resource_group.myrg.name
+  location                      = azurerm_resource_group.myrg.location
+  size                          = "Standard_D4as_v4"
+  admin_username                = "azureuser"
+  admin_password                = "azureuser@123"
+  network_interface_ids         = [azurerm_network_interface.appvmnic.id]
+  capacity_reservation_group_id = local.map_crg_ids_by_name.crg-app
   os_disk {
     name                 = "osdisk-app"
     caching              = "ReadWrite"
@@ -46,8 +47,8 @@ resource "azurerm_linux_virtual_machine" "applinuxvm" {
     version   = "latest"
   }
   disable_password_authentication = false
-  capacity_reservation_group_id   = local.map_crg_ids_by_name.crg-app
-  zone                            = "1"
+
+  zone = "1"
 }
 
 
@@ -59,13 +60,13 @@ resource "azurerm_linux_virtual_machine_scale_set" "appvmss" {
   instances           = var.instance_count
   upgrade_mode        = "Manual"
 
-  zones = ["1"] # Optional: Zone-redundant (use supported regions)
+  zones                           = ["1"] # Optional: Zone-redundant (use supported regions)
   disable_password_authentication = false
   capacity_reservation_group_id   = local.map_crg_ids_by_name.crg-app
-  single_placement_group = false
+  single_placement_group          = false
 
   admin_username = "azureuser"
-  admin_password = "AhtritusMS11@"
+  admin_password = "azureuser@123"
 
   # Source image (Ubuntu 22.04 LTS)
   source_image_reference {
